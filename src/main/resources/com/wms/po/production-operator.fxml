@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.ProductionOperatorController">
+    <left>
+        <AnchorPane prefHeight="397.0" prefWidth="202.0" style="-fx-background-color: #263F73;" BorderPane.alignment="CENTER">
+            <effect>
+                <DropShadow />
+            </effect>
+            <Label alignment="CENTER" layoutY="25.0" prefHeight="18.0" prefWidth="230.0" text="WMS" textFill="WHITE">
+                <font>
+                    <Font name="Century Gothic Bold" size="25.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Label>
+            <Label alignment="CENTER" layoutY="354.0" prefHeight="18.0" prefWidth="230.0" text="WMS - Warehouse Management Software" textFill="WHITE">
+                <font>
+                    <Font name="Century Gothic Bold" size="10.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="2.0" layoutY="74.0" prefHeight="18.0" prefWidth="228.0" text="Production" textFill="WHITE">
+                <font>
+                    <Font name="Century Gothic Bold" size="24.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="1.0" layoutY="105.0" prefHeight="18.0" prefWidth="228.0" text="Operator" textFill="WHITE">
+                <font>
+                    <Font name="Century Gothic Bold" size="24.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Label>
+            <Label fx:id="username" alignment="CENTER" layoutX="2.0" layoutY="200.0" prefHeight="18.0" prefWidth="228.0" textFill="WHITE">
+                <font>
+                    <Font name="Century Gothic Bold" size="24.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="2.0" layoutY="168.0" prefHeight="18.0" prefWidth="228.0" text="Name:" textFill="WHITE">
+                <font>
+                    <Font name="Century Gothic Bold" size="24.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Label>
+            <Line endX="100.0" layoutX="116.0" layoutY="65.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0">
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Line>
+         <Button fx:id="logoutBtn" layoutX="31.0" layoutY="321.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #942a22;" text="Logout" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <effect>
+               <DropShadow />
+            </effect></Button>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="400.0" prefWidth="471.0" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="264.0" fitWidth="468.0" layoutX="4.0" layoutY="62.0" opacity="0.2" pickOnBounds="true" preserveRatio="true" styleClass="bg-primary">
+                <effect>
+                    <DropShadow />
+                </effect>
+                <Image url="@background.jpg" />
+            </ImageView>
+            <ComboBox fx:id="products" layoutX="131.0" layoutY="127.0" prefHeight="26.0" prefWidth="214.0" />
+            <Label alignment="CENTER" layoutX="139.0" layoutY="30.0" prefHeight="32.0" prefWidth="198.0" text="Make a Request">
+                <font>
+                    <Font name="Century Gothic Bold" size="25.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="123.0" layoutY="87.0" prefHeight="18.0" prefWidth="230.0" text="Select Product:">
+                <font>
+                    <Font name="Century Gothic Bold" size="20.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="123.0" layoutY="168.0" prefHeight="18.0" prefWidth="230.0" text="Quantity:">
+                <font>
+                    <Font name="Century Gothic Bold" size="20.0" />
+                </font>
+            </Label>
+        <TextField fx:id="quantity" layoutX="192.0" layoutY="204.0" prefHeight="26.0" prefWidth="87.0" />
+        <Button fx:id="sendRequestBtn" layoutX="158.0" layoutY="298.0" mnemonicParsing="false" onAction="#sendRequest" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #295ca9;" text="Send Request" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <effect>
+               <DropShadow />
+            </effect></Button>
+        <Button fx:id="reportMisuseBtn" layoutX="286.0" layoutY="359.0" mnemonicParsing="false" onAction="#openReportWindow" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #942a22;" text="Report Misuse" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <effect>
+               <DropShadow />
+            </effect></Button>
+        <Button fx:id="requestHistoryBtn" layoutX="36.0" layoutY="359.0" mnemonicParsing="false" onAction="#openRequestHistory" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #295ca9;" text="My Request History" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <effect>
+               <DropShadow />
+            </effect></Button>
+        </AnchorPane>
+    </right>
+</BorderPane>

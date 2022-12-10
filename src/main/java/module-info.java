@@ -9,8 +9,6 @@ module com.wms {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
 
-    exports com.wms.ui;
-    opens com.wms.ui to javafx.fxml;
     exports com.wms.controller;
     opens com.wms.controller to javafx.fxml;
     exports com.wms;
