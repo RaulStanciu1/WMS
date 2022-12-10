@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.RegisterController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="206.0" style="-fx-background-color: #263F73;" BorderPane.alignment="CENTER">
+         <effect>
+            <DropShadow />
+         </effect>
+         <Label alignment="CENTER" layoutX="-1.0" layoutY="127.0" prefHeight="18.0" prefWidth="230.0" text="WMS" textFill="WHITE">
+            <font>
+               <Font name="Century Gothic Bold" size="25.0" />
+            </font>
+            <effect>
+               <DropShadow />
+            </effect>
+         </Label>
+         <Label alignment="CENTER" layoutY="354.0" prefHeight="18.0" prefWidth="230.0" text="WMS - Warehouse Management Software" textFill="WHITE">
+            <font>
+               <Font name="Century Gothic Bold" size="10.0" />
+            </font>
+            <effect>
+               <DropShadow />
+            </effect>
+         </Label>
+         <Label alignment="CENTER" layoutX="1.0" layoutY="176.0" prefHeight="18.0" prefWidth="228.0" text="Register Page" textFill="WHITE">
+            <font>
+               <Font name="Century Gothic Bold" size="24.0" />
+            </font>
+            <effect>
+               <DropShadow />
+            </effect>
+         </Label>
+         <Line endX="100.0" layoutX="115.0" layoutY="167.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0">
+            <effect>
+               <DropShadow />
+            </effect>
+         </Line>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+         <Label alignment="CENTER" layoutX="29.0" layoutY="9.0" prefHeight="18.0" prefWidth="228.0" text="Register Page" textFill="WHITE">
+            <font>
+               <Font name="Century Gothic Bold" size="24.0" />
+            </font>
+            <effect>
+               <DropShadow />
+            </effect>
+         </Label>
+         <Label layoutX="26.0" layoutY="97.0" text="Password">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+         <Label layoutX="24.0" layoutY="59.0" text="Username">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+         <TextField layoutX="106.0" layoutY="56.0" promptText="Username" />
+         <PasswordField layoutX="106.0" layoutY="94.0" promptText="Password" />
+         <PasswordField layoutX="106.0" layoutY="133.0" promptText="Confirm Password" />
+         <Hyperlink fx:id="toLoginPage" alignment="CENTER" layoutX="25.0" layoutY="360.0" prefHeight="24.0" prefWidth="237.0" text="Already have an account? Login Here" />
+         <Button layoutX="25.0" layoutY="262.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="237.0" style="-fx-background-color: #263F73;" text="Register" textFill="WHITE">
+            <effect>
+               <DropShadow />
+            </effect>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Button fx:id="closeBtn" layoutX="24.0" layoutY="313.0" mnemonicParsing="false" onAction="#onCloseBtnClicked" prefHeight="26.0" prefWidth="237.0" style="-fx-background-color: #942a22;" text="Close" textFill="WHITE">
+            <effect>
+               <DropShadow />
+            </effect>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Label fx:id="errMsg" alignment="CENTER" layoutX="25.0" layoutY="223.0" prefHeight="18.0" prefWidth="237.0" textFill="RED">
+            <font>
+               <Font name="Century Gothic Bold" size="13.0" />
+            </font>
+         </Label>
+         <Label layoutX="35.0" layoutY="136.0" prefHeight="20.0" prefWidth="54.0" text="Confirm">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+         <Label layoutX="35.0" layoutY="180.0" text="Position">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+         <ComboBox layoutX="106.0" layoutY="177.0" prefHeight="26.0" prefWidth="176.0" />
+      </AnchorPane>
+   </right>
+</BorderPane>
