@@ -64,8 +64,8 @@
                <Font name="System Bold" size="14.0" />
             </font>
          </Label>
-         <TextField layoutX="106.0" layoutY="119.0" promptText="Username" />
-         <PasswordField layoutX="106.0" layoutY="178.0" promptText="Password" />
+         <TextField fx:id="username" layoutX="106.0" layoutY="119.0" promptText="Username" />
+         <PasswordField fx:id="password" layoutX="106.0" layoutY="178.0" promptText="Password" />
          <Hyperlink fx:id="toRegisterPage" layoutX="25.0" layoutY="350.0" onAction="#openRegisterPage" prefHeight="24.0" prefWidth="240.0" text="Don't have an account? Apply for one here!" />
          <Button fx:id="loginBtn" layoutX="25.0" layoutY="252.0" mnemonicParsing="false" onAction="#login" prefHeight="26.0" prefWidth="235.0" style="-fx-background-color: #263F73;" text="Login" textFill="WHITE">
             <effect>
@@ -85,7 +85,7 @@
          </Button>
          <Label fx:id="errMsg" alignment="CENTER" layoutX="25.0" layoutY="85.0" prefHeight="18.0" prefWidth="232.0" textFill="RED">
             <font>
-               <Font name="Century Gothic Bold" size="13.0" />
+               <Font name="Century Gothic Bold" size="10.0" />
             </font>
          </Label>
       </AnchorPane>
