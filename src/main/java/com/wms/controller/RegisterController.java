@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class RegisterController {
+public class RegisterController implements Controller{
     @FXML private PasswordField password;
     @FXML private PasswordField confirmPassword;
     @FXML private TextField displayName;

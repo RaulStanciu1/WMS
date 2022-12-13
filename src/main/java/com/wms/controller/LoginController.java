@@ -14,13 +14,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class LoginController {
+public class LoginController implements Controller{
     @FXML private TextField username;
     @FXML private PasswordField password;
     @FXML private Button closeBtn;
     @FXML private Button loginBtn;
     @FXML private Label errMsg;
     @FXML private Hyperlink toRegisterPage;
+
+    @Override
+    public void init()  {}
+
     public void errorMessage(String msg){
         errMsg.setText(msg);
     }
@@ -41,10 +45,19 @@ public class LoginController {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource(resourcePath));
         Parent root = loader.load();
         Scene mainScene= new Scene(root);
+        Controller controller = loader.getController();
         Stage newWindow = new Stage();
         newWindow.setScene(mainScene);
         newWindow.setResizable(false);
         newWindow.setTitle(title);
+        User user=null;
+        try{
+            user=Validation.getUserFromDB(username.getText());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        newWindow.setUserData(user);
+        controller.init();
         newWindow.show();
         oldStage.close();
     }

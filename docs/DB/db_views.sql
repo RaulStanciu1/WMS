@@ -34,14 +34,6 @@ CREATE VIEW `pending_requests_view` AS
 		FROM `wms`.`requests`
         WHERE status='PENDING'
 
--- Creating a Daily Stats View
-CREATE VIEW `daily_stats` AS
-	SELECT count('req') AS "Number Of Requests", count('rep') AS "Number Of Reports", count('app_req') AS "Number Of Approved Requests", count('den_req') AS "Number Of Denied Requests"
-    FROM (SELECT id FROM `wms`.`requests` WHERE timestamp=CURDATE()) AS req,
-    (SELECT id FROM `wms`.`reports` WHERE timestamp=CURDATE()) AS rep,
-    (SELECT id FROM `wms`.`requests` WHERE timestamp=CURDATE() AND status='APPROVED') AS app_req,
-    (SELECT id FROM `wms`.`requests` WHERE timestamp=CURDATE() AND status='DENIED') AS den_req
-
 -- Creating a Current Users View
 CREATE VIEW `current_users_view` AS
 	SELECT id AS 'user_id', display_name AS 'name', position

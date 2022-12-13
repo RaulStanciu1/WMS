@@ -26,7 +26,7 @@
                     <Cursor fx:constant="HAND" />
                 </cursor>
             </Button>
-            <Button layoutX="139.0" layoutY="328.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="235.0" style="-fx-background-color: #263F73;" text="Approve Selected User" textFill="WHITE">
+            <Button fx:id="approveSelectedUserBtn" layoutX="139.0" layoutY="328.0" mnemonicParsing="false" onAction="#approveSelectedUser" prefHeight="26.0" prefWidth="235.0" style="-fx-background-color: #263F73;" text="Approve Selected User" textFill="WHITE">
                 <effect>
                     <DropShadow />
                 </effect>
@@ -34,7 +34,7 @@
                     <Cursor fx:constant="HAND" />
                 </cursor>
             </Button>
-            <Button layoutX="139.0" layoutY="369.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="235.0" style="-fx-background-color: #942a22;" text="Deny Selected User" textFill="WHITE">
+            <Button fx:id="denySelectedUserBtn" layoutX="139.0" layoutY="369.0" mnemonicParsing="false" onAction="#denySelectedUser" prefHeight="26.0" prefWidth="235.0" style="-fx-background-color: #942a22;" text="Deny Selected User" textFill="WHITE">
                 <effect>
                     <DropShadow />
                 </effect>
@@ -42,11 +42,12 @@
                     <Cursor fx:constant="HAND" />
                 </cursor>
             </Button>
-            <TableView layoutX="75.0" layoutY="45.0" prefHeight="274.0" prefWidth="364.0">
+            <TableView fx:id="usersAwaitingApprovalTable" layoutX="15.0" layoutY="45.0" prefHeight="274.0" prefWidth="489.0">
                 <columns>
-                    <TableColumn prefWidth="97.59997749328613" text="ID" />
-                    <TableColumn prefWidth="145.60002899169922" text="Username" />
-                    <TableColumn prefWidth="78.39996337890625" text="Position" />
+                    <TableColumn fx:id="idColumn" prefWidth="97.59997749328613" text="ID" />
+                    <TableColumn fx:id="usernameColumn" prefWidth="145.60002899169922" text="Username" />
+               <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                    <TableColumn fx:id="positionColumn" prefWidth="78.39996337890625" text="Position" />
                 </columns>
                 <effect>
                     <DropShadow />

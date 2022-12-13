@@ -71,16 +71,8 @@ class HashedPassword {
 }
 
 
-
 public class Validation {
-    static class DBConnection{
-        final static String URL = "jdbc:mysql://localhost:3306/wms";
-        final static String USER = "wms_admin";
-        final static String PASS = "P@ssword12";
-        public static Connection connect() throws SQLException {
-            return DriverManager.getConnection(URL, USER, PASS);
-        }
-    }
+
     public static User getUserFromDB(String username) throws Exception{
         String SQL="SELECT * FROM wms.users WHERE username=?";
         User user=null;
@@ -118,7 +110,7 @@ public class Validation {
                     throw new Exception("This Account was Denied By Admin");
                 }
             }else{
-                throw new Exception("This Username Doesn't Exist");
+                throw new Exception("Account Doesn't Exist Or Has Been Deleted");
             }
         }catch(SQLException e){
             throw new Exception("Something Went Wrong");

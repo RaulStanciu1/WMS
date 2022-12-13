@@ -14,4 +14,6 @@ module com.wms {
     opens com.wms.controller to javafx.fxml;
     exports com.wms;
     opens com.wms to javafx.fxml;
+    exports com.wms.data;
+    opens com.wms.data to javafx.fxml;
 }

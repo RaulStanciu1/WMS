@@ -34,11 +34,12 @@
                     <Cursor fx:constant="HAND" />
                 </cursor>
             </Button>
-            <TableView layoutX="75.0" layoutY="45.0" prefHeight="274.0" prefWidth="364.0">
+            <TableView fx:id="currentUsersTable" layoutX="19.0" layoutY="45.0" prefHeight="274.0" prefWidth="488.0">
                 <columns>
-                    <TableColumn prefWidth="97.59997749328613" text="ID" />
-                    <TableColumn prefWidth="145.60002899169922" text="Username" />
-                    <TableColumn prefWidth="78.39996337890625" text="Position" />
+                    <TableColumn fx:id="idColumn" prefWidth="97.59997749328613" text="ID" />
+                    <TableColumn fx:id="usernameColumn" prefWidth="145.60002899169922" text="Username" />
+               <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                    <TableColumn fx:id="positionColumn" prefWidth="78.39996337890625" text="Position" />
                 </columns>
                 <effect>
                     <DropShadow />

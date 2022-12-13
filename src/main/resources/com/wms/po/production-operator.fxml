@@ -95,6 +95,16 @@
                     <Font name="Century Gothic Bold" size="20.0" />
                 </font>
             </Label>
+            <Label fx:id="errMsg" alignment="CENTER" layoutX="123.0" layoutY="253.0" prefHeight="18.0" prefWidth="230.0" textFill="RED">
+                <font>
+                    <Font name="Century Gothic Bold" size="20.0" />
+                </font>
+            </Label>
+            <Label fx:id="successMsg" alignment="CENTER" layoutX="98.0" layoutY="252.0" prefHeight="26.0" prefWidth="280.0" textFill="#238018">
+                <font>
+                    <Font name="Century Gothic Bold" size="20.0" />
+                </font>
+            </Label>
             <Label alignment="CENTER" layoutX="123.0" layoutY="168.0" prefHeight="18.0" prefWidth="230.0" text="Quantity:">
                 <font>
                     <Font name="Century Gothic Bold" size="20.0" />
