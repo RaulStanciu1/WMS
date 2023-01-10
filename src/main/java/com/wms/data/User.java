@@ -32,6 +32,7 @@ public class User {
     public String toString(){
         return id+" "+username+" "+name+" "+position;
     }
+
     public static List<Integer> getAllWOIDs(){
         List<Integer> ids = new ArrayList<>();
         String SQL="SELECT id from wms.users WHERE position='WAREHOUSE_OP' AND status='APPROVED'";
@@ -85,6 +86,29 @@ public class User {
             e.printStackTrace();
         }
         return users;
+    }
+
+    public static User getUserById(int id) throws Exception{
+        String SQL="SELECT * FROM wms.users WHERE id=?";
+        User user = null;
+        try(Connection conn = DBConnection.connect()){
+            PreparedStatement ps = conn.prepareStatement(SQL);
+            ps.setInt(1,id);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                user = new User(
+                        rs.getInt("id"),
+                        rs.getString("username"),
+                        rs.getString("display_name"),
+                        Position.valueOf(rs.getString("position")));
+            }
+        }catch(Exception e){
+            throw new Exception("Something Went Wrong");
+        }
+        if(user == null){
+            throw new Exception("This user doesn't exist");
+        }
+        return user;
     }
 
 }

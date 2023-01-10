@@ -10,43 +10,45 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.kordamp.bootstrapfx.BootstrapFX;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDate;
+import java.util.List;
 
 public class ProductionOperatorController implements Controller{
     @FXML private Button requestHistoryBtn;
-    @FXML private Button reportMisuseBtn;
-    @FXML private Button sendRequestBtn;
     @FXML private TextField quantity;
-    @FXML private ComboBox<Integer> products;
     @FXML private Button logoutBtn;
     @FXML private Label username;
-    @FXML private Label errMsg;
-    @FXML private Label successMsg;
+    private User userData;
+    @FXML private TabPane productsContainer;
     public void errorMessage(String msg){
-        errMsg.setText(msg);
+        Alert alert = new Alert(Alert.AlertType.ERROR,msg,ButtonType.OK);
+        alert.showAndWait();
     }
     public void successMessage(String msg){
-        successMsg.setText(msg);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,msg,ButtonType.OK);
+        alert.showAndWait();
     }
     public void init(){
-        User userInfo = (User) username.getScene().getWindow().getUserData();
-        username.setText(userInfo.getName());
+        userData = (User) username.getScene().getWindow().getUserData();
+        username.setText(userData.getName());
+        productsContainer.setStyle("\"-fx-font: 20px \\\"Century Gothic\\\";\"");
         try {
-            products.getItems().addAll(Product.getProductIds(Product.getProductsFromDB()));
+            List<Product> productList = Product.getProductsFromDB();
+            for(Product p:productList){
+                Tab productTab = new Tab(String.valueOf(p.id()));
+                productTab.setUserData(p);
+                productTab.setContent(new ProductContainer(p).getPane());
+                productsContainer.getTabs().add(productTab);
+            }
         }catch(Exception e){
             errorMessage(e.getMessage());
         }
@@ -57,9 +59,8 @@ public class ProductionOperatorController implements Controller{
         parent.close();
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 520, 400);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setResizable(false);
-        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
@@ -82,15 +83,14 @@ public class ProductionOperatorController implements Controller{
 
     }
 
-    public void sendRequest(ActionEvent actionEvent) {
+    public void sendRequest() {
         int amount;
-        User userData = (User) username.getScene().getWindow().getUserData();
+        userData = (User) username.getScene().getWindow().getUserData();
         try{
-            errorMessage("");
-            successMessage("");
             amount=Integer.parseInt(quantity.getText());
-            int productId=products.getSelectionModel().getSelectedItem();
+            int productId=((Product)productsContainer.getSelectionModel().getSelectedItem().getUserData()).id();
             insertRequestToDB(new RequestInsert(userData.getId(),productId,amount,new Date(System.currentTimeMillis())));
+            quantity.setText("");
             successMessage("Request Sent Successfully");
         }catch(SQLException e){
             errorMessage("Something Went Wrong");
@@ -100,26 +100,17 @@ public class ProductionOperatorController implements Controller{
         }
     }
 
-
-    public void openReportWindow(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("report/make-report.fxml"));
-        Parent root = fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.initOwner(reportMisuseBtn.getScene().getWindow());
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
-        stage.show();
-    }
-
     public void openRequestHistory(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("po/request-history.fxml"));
         Parent root = fxmlLoader.load();
+        PORequestHistoryController controller = fxmlLoader.getController();
         Stage stage = new Stage();
         stage.initOwner(requestHistoryBtn.getScene().getWindow());
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root));
         stage.setResizable(false);
+        stage.setUserData(userData);
+        controller.init();
         stage.show();
     }
 }

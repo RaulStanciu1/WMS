@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.NewProductController">
+    <right>
+        <AnchorPane prefHeight="464.0" prefWidth="513.0" BorderPane.alignment="CENTER">
+         <ImageView fitHeight="464.0" fitWidth="746.0" layoutX="-225.0" opacity="0.5" pickOnBounds="true">
+            <image>
+               <Image url="@../img_1.jpg" />
+            </image>
+         </ImageView>
+         <Rectangle fx:id="usernameRectangle" arcHeight="5.0" arcWidth="5.0" height="57.0" layoutX="99.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="323.0">
+            <effect>
+               <DropShadow />
+            </effect>
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.18400000035762787" green="0.5318275690078735" blue="0.800000011920929" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.14901961386203766" green="0.24705882370471954" blue="0.45098039507865906" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+            <Label alignment="CENTER" layoutX="129.0" layoutY="24.0" prefHeight="31.0" prefWidth="264.0" text="Create a New Product" textFill="WHITE">
+                <font>
+                    <Font name="Century Gothic Bold" size="24.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Label>
+         <Button fx:id="uploadBtn" layoutX="171.0" layoutY="203.0" mnemonicParsing="false" onAction="#uploadImage" style="-fx-background-color: #1a9c64;" text="Upload an Image File:" textFill="WHITE">
+            <font>
+               <Font name="Century Gothic Bold" size="15.0" />
+            </font>
+            <effect>
+               <DropShadow />
+            </effect>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Rectangle fx:id="usernameRectangle1" arcHeight="5.0" arcWidth="5.0" height="57.0" layoutX="99.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="323.0">
+            <effect>
+               <DropShadow />
+            </effect>
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.07329434901475906" green="0.42105263471603394" blue="0.2703573703765869" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.10196078568696976" green="0.6117647290229797" blue="0.3921568691730499" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+         <Label fx:id="filePath" alignment="CENTER" layoutX="105.0" layoutY="149.0" prefHeight="31.0" prefWidth="315.0" text="No File Yet..." textFill="WHITE">
+            <font>
+               <Font name="Century Gothic Bold" size="12.0" />
+            </font>
+            <effect>
+               <DropShadow />
+            </effect>
+         </Label>
+         <TextArea fx:id="productDescription" layoutX="101.0" layoutY="303.0" prefHeight="63.0" prefWidth="322.0">
+            <font>
+               <Font name="Century Gothic" size="13.0" />
+            </font>
+         </TextArea>
+         <Button fx:id="uploadBtn1" layoutX="129.0" layoutY="387.0" mnemonicParsing="false" onAction="#createNewProduct" style="-fx-background-color: #1a9c64;" text="Create New Product" textFill="WHITE">
+            <font>
+               <Font name="Century Gothic Bold" size="24.0" />
+            </font>
+            <effect>
+               <DropShadow />
+            </effect>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Rectangle fx:id="usernameRectangle11" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="111.0" layoutY="252.0" stroke="BLACK" strokeType="INSIDE" width="303.0">
+            <effect>
+               <DropShadow />
+            </effect>
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.07329434901475906" green="0.42105263471603394" blue="0.2703573703765869" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.10196078568696976" green="0.6117647290229797" blue="0.3921568691730499" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+         <Label fx:id="filePath1" alignment="CENTER" layoutX="105.0" layoutY="254.0" prefHeight="31.0" prefWidth="315.0" text="Product Description" textFill="WHITE">
+            <font>
+               <Font name="Century Gothic Bold" size="12.0" />
+            </font>
+            <effect>
+               <DropShadow />
+            </effect>
+         </Label>
+        </AnchorPane>
+    </right>
+    <center>
+        <AnchorPane prefHeight="400.0" prefWidth="214.0" style="-fx-background-color: #263F73;" BorderPane.alignment="CENTER">
+            <effect>
+                <DropShadow />
+            </effect>
+         <Circle layoutX="116.0" layoutY="168.0" radius="111.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+            <fill>
+               <RadialGradient centerX="0.5" centerY="0.45833335500774963" radius="0.5">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.1305263191461563" green="0.39157894253730774" blue="0.6526315808296204" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.054580897092819214" green="0.23781676590442657" blue="0.42105263471603394" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </RadialGradient>
+            </fill>
+         </Circle>
+            <Label alignment="CENTER" layoutX="87.0" layoutY="135.0" prefHeight="32.0" prefWidth="59.0" text="WMS" textFill="WHITE">
+                <font>
+                    <Font name="Century Gothic Bold" size="25.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="8.0" layoutY="424.0" prefHeight="18.0" prefWidth="217.0" text="WMS - Warehouse Management Software" textFill="WHITE">
+                <font>
+                    <Font name="Century Gothic Bold" size="10.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="6.0" layoutY="168.0" prefHeight="31.0" prefWidth="222.0" text="New Product" textFill="WHITE">
+                <font>
+                    <Font name="Century Gothic Bold" size="24.0" />
+                </font>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Label>
+            <Line endX="78.0" layoutX="144.0" layoutY="167.0" startX="-131.60000610351562" stroke="WHITE" strokeWidth="2.0">
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Line>
+        </AnchorPane>
+    </center>
+</BorderPane>

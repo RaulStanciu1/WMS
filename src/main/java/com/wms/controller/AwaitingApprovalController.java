@@ -2,9 +2,8 @@ package com.wms.controller;
 
 import com.wms.Main;
 import com.wms.data.DBConnection;
-import com.wms.data.RequestSearch;
 import com.wms.data.User;
-import com.wms.data.UserModel;
+import com.wms.data.models.UserModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -76,6 +75,7 @@ public class AwaitingApprovalController implements Controller{
             ps.setInt(1,u.getId());
             ps.execute();
             this.usersAwaitingApprovalTable.getItems().remove(index);
+            this.users.remove(index);
         }catch(Exception e){
             System.out.println(e);
             e.printStackTrace();
@@ -90,6 +90,7 @@ public class AwaitingApprovalController implements Controller{
             ps.setInt(1,u.getId());
             ps.execute();
             this.usersAwaitingApprovalTable.getItems().remove(index);
+            this.users.remove(index);
         }catch(Exception e){
             System.out.println(e);
             e.printStackTrace();

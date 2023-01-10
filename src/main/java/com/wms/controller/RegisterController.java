@@ -18,13 +18,14 @@ public class RegisterController implements Controller{
     @FXML private TextField displayName;
     @FXML private ComboBox<Position> positions;
     @FXML private TextField username;
-    @FXML private Label errMsg;
-    @FXML private Label successMsg;
     @FXML private Hyperlink toLoginPageBtn;
     @FXML private Button closeBtn;
+    @FXML private Label errMsg;
+    @FXML private Label successMsg;
     public void init(){
         positions.getItems().addAll(Position.WAREHOUSE_OP,Position.PRODUCTION_OP);
         positions.getSelectionModel().selectFirst();
+        positions.setStyle("-fx-font: 18px \"Century Gothic\";");
     }
     public void errorMessage(String msg){
         errMsg.setText(msg);
@@ -41,7 +42,7 @@ public class RegisterController implements Controller{
     public void toLoginPage(ActionEvent ae) throws IOException {
         Stage s=(Stage)toLoginPageBtn.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("login.fxml"));
-        Scene loginScene = new Scene(loader.load(),520,400);
+        Scene loginScene = new Scene(loader.load());
         s.setScene(loginScene);
     }
 

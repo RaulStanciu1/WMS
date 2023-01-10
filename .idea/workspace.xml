@@ -4,22 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbcead36-9c6c-4550-8135-88ab6f4f9d00" name="Changes" comment="Added Login-Register System(still needs work)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/PerformanceMeasurement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/RequestInsert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/RequestSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/UserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/WoRequestModel.java" afterDir="false" />
+    <list default="true" id="dbcead36-9c6c-4550-8135-88ab6f4f9d00" name="Changes" comment="Beta Version">
+      <change afterPath="$PROJECT_DIR$/docs/DB/views.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/simple-java-mail-7.6.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/DailyAnalysisController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/NewProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/ProductContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/analysis/DailyAnalysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/analysis/DailyReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/misuse/AutomatedMisuseAnalysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/misuse/Misuse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/misuse/MisuseType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/misuse/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/misuse/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/models/RequestHistoryModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/models/WarehouseStockModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/admin/daily-analysis.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/admin/new-product.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/img_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/imag_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/products/product_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/products/product_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/products/product_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/products/product_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/products/product_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/products/product_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/products/product_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/products/product_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/products/product_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/products/product_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/wms/stock/img_1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/DB/db_views.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DB/db_views.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/DB/db_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DB/db_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/DB/db_views.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/AwaitingApprovalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/AwaitingApprovalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/MakeReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/MakeReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/MakeReportController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/PORequestHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/PORequestHistoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/ProductionOperatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/ProductionOperatorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/RegisterController.java" afterDir="false" />
@@ -28,14 +51,25 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/ViewStockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/ViewStockController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/WORequestHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/WORequestHistoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/controller/WarehouseOperatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/controller/WarehouseOperatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/data/PerformanceMeasurement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/analysis/PerformanceMeasurement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/data/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/data/RequestInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/RequestInsert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/data/RequestSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/RequestSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/data/Validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/Validation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/data/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/models/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wms/data/WoRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wms/data/models/WoRequestModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/admin/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/admin/admin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/admin/awaiting-approval.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/admin/awaiting-approval.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/admin/user-management.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/admin/user-management.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/po/production-operator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/production-operator.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/po/request-history.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/po/request-history.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/report/make-report.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/report/view-reports.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/report/view-reports.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/stock/view-stock.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/stock/view-stock.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/wo/request-history.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/wo/request-history.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/wms/wo/warehouse-operator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/wms/wo/warehouse-operator.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,9 +80,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -80,14 +114,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Projects/Java/BMS/src/main/java/com/bms/ui/menu/options/ShowLoans.java",
+    "last_opened_file_path": "D:/Projects/Java/WMS/src/main/resources/com/wms/admin",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\Java\WMS\src\main\resources\com\wms\admin" />
       <recent name="D:\Projects\Java\WMS\docs" />
       <recent name="D:\Projects\Java\WMS\src\main\resources\com\wms\ui" />
     </key>
@@ -148,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670797198658</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Beta Version">
+      <created>1670972391999</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670972391999</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -156,6 +198,7 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Finished Skeleton Of App" />
     <MESSAGE value="Added Login-Register System(still needs work)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Login-Register System(still needs work)" />
+    <MESSAGE value="Beta Version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Beta Version" />
   </component>
 </project>

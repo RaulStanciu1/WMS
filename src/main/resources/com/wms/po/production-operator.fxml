@@ -1,19 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.ProductionOperatorController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="935.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.ProductionOperatorController">
     <left>
         <AnchorPane prefHeight="397.0" prefWidth="202.0" style="-fx-background-color: #263F73;" BorderPane.alignment="CENTER">
             <effect>
                 <DropShadow />
             </effect>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="134.0" layoutX="12.0" layoutY="13.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="206.0">
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.11099415272474289" green="0.4506647288799286" blue="0.7684210538864136" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.12627680599689484" green="0.25857439637184143" blue="0.43157893419265747" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
             <Label alignment="CENTER" layoutY="25.0" prefHeight="18.0" prefWidth="230.0" text="WMS" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="25.0" />
@@ -22,7 +49,7 @@
                     <DropShadow />
                 </effect>
             </Label>
-            <Label alignment="CENTER" layoutY="354.0" prefHeight="18.0" prefWidth="230.0" text="WMS - Warehouse Management Software" textFill="WHITE">
+            <Label alignment="CENTER" layoutY="510.0" prefHeight="18.0" prefWidth="230.0" text="WMS - Warehouse Management Software" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="10.0" />
                 </font>
@@ -67,71 +94,105 @@
                     <DropShadow />
                 </effect>
             </Line>
-         <Button fx:id="logoutBtn" layoutX="31.0" layoutY="321.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #942a22;" text="Logout" textFill="WHITE">
+         <Button fx:id="logoutBtn" layoutX="30.0" layoutY="463.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #942a22;" text="Logout" textFill="WHITE">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
             <effect>
                <DropShadow />
-            </effect></Button>
+            </effect>
+            <font>
+               <Font name="Century Gothic Bold" size="18.0" />
+            </font>
+         </Button>
+        <Button fx:id="requestHistoryBtn" layoutX="21.0" layoutY="409.0" mnemonicParsing="false" onAction="#openRequestHistory" prefHeight="36.0" prefWidth="190.0" style="-fx-background-color: #295ca9;" text="My Request History" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <effect>
+               <DropShadow />
+            </effect>
+            <font>
+               <Font name="Century Gothic Bold" size="18.0" />
+            </font>
+         </Button>
         </AnchorPane>
     </left>
     <right>
-        <AnchorPane prefHeight="400.0" prefWidth="471.0" BorderPane.alignment="CENTER">
-            <ImageView fitHeight="264.0" fitWidth="468.0" layoutX="4.0" layoutY="62.0" opacity="0.2" pickOnBounds="true" preserveRatio="true" styleClass="bg-primary">
+        <AnchorPane prefHeight="553.0" prefWidth="707.0" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="563.0" fitWidth="702.0" layoutX="7.0" layoutY="4.0" opacity="0.2" pickOnBounds="true" styleClass="bg-primary">
                 <effect>
                     <DropShadow />
                 </effect>
-                <Image url="@background.jpg" />
+                <Image url="@imag_1.jpeg" />
             </ImageView>
-            <ComboBox fx:id="products" layoutX="131.0" layoutY="127.0" prefHeight="26.0" prefWidth="214.0" />
-            <Label alignment="CENTER" layoutX="139.0" layoutY="30.0" prefHeight="32.0" prefWidth="198.0" text="Make a Request">
+         <Rectangle fx:id="usernameRectangle1" arcHeight="5.0" arcWidth="5.0" height="57.0" layoutX="275.0" layoutY="449.0" stroke="BLACK" strokeType="INSIDE" width="200.0">
+            <effect>
+               <DropShadow />
+            </effect>
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.18400000035762787" green="0.5318275690078735" blue="0.800000011920929" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.14901961386203766" green="0.24705882370471954" blue="0.45098039507865906" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+         <Rectangle fx:id="usernameRectangle" arcHeight="5.0" arcWidth="5.0" height="57.0" layoutX="178.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="385.0">
+            <effect>
+               <DropShadow />
+            </effect>
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.18400000035762787" green="0.5318275690078735" blue="0.800000011920929" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.14901961386203766" green="0.24705882370471954" blue="0.45098039507865906" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+            <Label alignment="CENTER" layoutX="279.0" layoutY="32.0" prefHeight="32.0" prefWidth="198.0" text="Make a Request" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="25.0" />
                 </font>
             </Label>
-            <Label alignment="CENTER" layoutX="123.0" layoutY="87.0" prefHeight="18.0" prefWidth="230.0" text="Select Product:">
+            <Label alignment="CENTER" layoutX="283.0" layoutY="464.0" prefHeight="26.0" prefWidth="98.0" text="Quantity:" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="20.0" />
                 </font>
             </Label>
-            <Label fx:id="errMsg" alignment="CENTER" layoutX="123.0" layoutY="253.0" prefHeight="18.0" prefWidth="230.0" textFill="RED">
-                <font>
-                    <Font name="Century Gothic Bold" size="20.0" />
-                </font>
-            </Label>
-            <Label fx:id="successMsg" alignment="CENTER" layoutX="98.0" layoutY="252.0" prefHeight="26.0" prefWidth="280.0" textFill="#238018">
-                <font>
-                    <Font name="Century Gothic Bold" size="20.0" />
-                </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="123.0" layoutY="168.0" prefHeight="18.0" prefWidth="230.0" text="Quantity:">
-                <font>
-                    <Font name="Century Gothic Bold" size="20.0" />
-                </font>
-            </Label>
-        <TextField fx:id="quantity" layoutX="192.0" layoutY="204.0" prefHeight="26.0" prefWidth="87.0" />
-        <Button fx:id="sendRequestBtn" layoutX="158.0" layoutY="298.0" mnemonicParsing="false" onAction="#sendRequest" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #295ca9;" text="Send Request" textFill="WHITE">
+        <TextField fx:id="quantity" layoutX="381.0" layoutY="464.0" prefHeight="26.0" prefWidth="87.0">
+            <font>
+               <Font name="Century Gothic" size="14.0" />
+            </font></TextField>
+        <Button fx:id="sendRequestBtn" layoutX="299.0" layoutY="514.0" mnemonicParsing="false" onAction="#sendRequest" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #295ca9;" text="Send Request" textFill="WHITE">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
             <effect>
                <DropShadow />
-            </effect></Button>
-        <Button fx:id="reportMisuseBtn" layoutX="286.0" layoutY="359.0" mnemonicParsing="false" onAction="#openReportWindow" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #942a22;" text="Report Misuse" textFill="WHITE">
-            <cursor>
-               <Cursor fx:constant="HAND" />
-            </cursor>
-            <effect>
-               <DropShadow />
-            </effect></Button>
-        <Button fx:id="requestHistoryBtn" layoutX="36.0" layoutY="359.0" mnemonicParsing="false" onAction="#openRequestHistory" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #295ca9;" text="My Request History" textFill="WHITE">
-            <cursor>
-               <Cursor fx:constant="HAND" />
-            </cursor>
-            <effect>
-               <DropShadow />
-            </effect></Button>
+            </effect>
+            <font>
+               <Font name="Century Gothic Bold" size="18.0" />
+            </font></Button>
+         <TabPane fx:id="productsContainer" layoutX="34.0" layoutY="109.0" prefHeight="331.0" prefWidth="665.0" tabClosingPolicy="UNAVAILABLE" />
         </AnchorPane>
     </right>
 </BorderPane>

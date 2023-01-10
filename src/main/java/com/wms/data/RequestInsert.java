@@ -7,11 +7,11 @@ import java.sql.ResultSet;
 import java.util.List;
 
 public class RequestInsert {
-    private int sender;
-    private int receiver;
-    private int productId;
-    private int quantity;
-    private Date timestamp;
+    private final int sender;
+    private final int receiver;
+    private final int productId;
+    private final int quantity;
+    private final Date timestamp;
     public RequestInsert(int sender,int productId,int quantity,Date timestamp){
         this.productId=productId;
         this.sender=sender;

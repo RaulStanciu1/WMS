@@ -1,5 +1,6 @@
-package com.wms.data;
+package com.wms.data.models;
 
+import com.wms.data.User;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 

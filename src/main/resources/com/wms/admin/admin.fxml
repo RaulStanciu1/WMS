@@ -1,20 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="971.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.AdminController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="971.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.AdminController">
     <left>
         <AnchorPane prefHeight="397.0" prefWidth="202.0" style="-fx-background-color: #263F73;" BorderPane.alignment="CENTER">
             <effect>
                 <DropShadow />
             </effect>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="134.0" layoutX="12.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="206.0">
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.11099415272474289" green="0.4506647288799286" blue="0.7684210538864136" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.12627680599689484" green="0.25857439637184143" blue="0.43157893419265747" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
             <Label alignment="CENTER" layoutY="25.0" prefHeight="18.0" prefWidth="230.0" text="WMS" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="25.0" />
@@ -23,7 +50,7 @@
                     <DropShadow />
                 </effect>
             </Label>
-            <Label alignment="CENTER" layoutY="422.0" prefHeight="18.0" prefWidth="230.0" text="WMS - Warehouse Management Software" textFill="WHITE">
+            <Label alignment="CENTER" layoutY="487.0" prefHeight="18.0" prefWidth="230.0" text="WMS - Warehouse Management Software" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="10.0" />
                 </font>
@@ -52,39 +79,52 @@
                     <DropShadow />
                 </effect>
             </Line>
-            <Button fx:id="viewReportsBtn" layoutX="29.0" layoutY="279.0" mnemonicParsing="false" onAction="#viewReports" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #942a22;" text="View Reports" textFill="WHITE">
+            <Button fx:id="viewStockBtn" layoutX="5.0" layoutY="179.0" mnemonicParsing="false" onAction="#viewStock" prefHeight="26.0" prefWidth="222.0" style="-fx-background-color: #328ba8;" text="View Stock" textFill="WHITE">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
             <effect>
                <DropShadow />
-            </effect></Button>
-            <Button fx:id="viewStockBtn" layoutX="29.0" layoutY="200.0" mnemonicParsing="false" onAction="#viewStock" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #328ba8;" text="View Stock" textFill="WHITE">
+            </effect>
+            <font>
+               <Font name="Century Gothic Bold" size="15.0" />
+            </font></Button>
+            <Button fx:id="userManagementBtn" layoutX="5.0" layoutY="243.0" mnemonicParsing="false" onAction="#userManagement" prefHeight="26.0" prefWidth="222.0" style="-fx-background-color: #328ba8;" text="User Management" textFill="WHITE">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
             <effect>
                <DropShadow />
-            </effect></Button>
-            <Button fx:id="userManagementBtn" layoutX="29.0" layoutY="240.0" mnemonicParsing="false" onAction="#userManagement" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #328ba8;" text="User Management" textFill="WHITE">
+            </effect>
+            <font>
+               <Font name="Century Gothic Bold" size="15.0" />
+            </font></Button>
+            <Button fx:id="logoutBtn" layoutX="30.0" layoutY="441.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #942a22;" text="Logout" textFill="WHITE">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
             <effect>
                <DropShadow />
-            </effect></Button>
-            <Button fx:id="logoutBtn" layoutX="30.0" layoutY="376.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #942a22;" text="Logout" textFill="WHITE">
+            </effect>
+            <font>
+               <Font name="Century Gothic Bold" size="15.0" />
+            </font></Button>
+         <Button layoutX="5.0" layoutY="302.0" mnemonicParsing="false" onAction="#newProduct" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: #328ba8;" text="Upload New Product" textFill="WHITE">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
             <effect>
                <DropShadow />
-            </effect></Button>
+            </effect>
+            <font>
+               <Font name="Century Gothic Bold" size="15.0" />
+            </font>
+         </Button>
         </AnchorPane>
     </left>
     <right>
         <AnchorPane prefHeight="544.0" prefWidth="742.0" BorderPane.alignment="CENTER">
-            <ImageView fitHeight="385.0" fitWidth="782.0" layoutY="77.0" opacity="0.2" pickOnBounds="true" preserveRatio="true" styleClass="bg-primary">
+            <ImageView fitHeight="544.0" fitWidth="741.0" layoutY="1.0" opacity="0.2" pickOnBounds="true" styleClass="bg-primary">
                 <effect>
                     <DropShadow />
                 </effect>
@@ -101,35 +141,27 @@
                <DropShadow />
             </effect>
          </LineChart>
-         <Label layoutX="39.0" layoutY="467.0" text="&lt;50 - Intervention Required" textFill="RED">
+            <Button fx:id="automatedMisuseBtn" layoutX="14.0" layoutY="487.0" mnemonicParsing="false" onAction="#viewAMS" prefHeight="36.0" prefWidth="264.0" style="-fx-background-color: #1a9c64;" text="Automated Misuse Search" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
             <effect>
                <DropShadow />
             </effect>
             <font>
-               <Font name="System Bold" size="12.0" />
-            </font>
-         </Label>
-            <Label fx:id="errMsg" layoutX="408.0" layoutY="494.0" textFill="RED">
-                <font>
-                    <Font name="System Bold" size="14.0" />
-                </font>
-            </Label>
-         <Label layoutX="39.0" layoutY="485.0" text="50 - 75 - Intervention Recommmended" textFill="YELLOW">
+               <Font name="Century Gothic Bold" size="18.0" />
+            </font></Button>
+         <Button fx:id="dailyDataAnalysisBtn" layoutX="501.0" layoutY="486.0" mnemonicParsing="false" onAction="#viewDailyAnalysis" prefHeight="38.0" prefWidth="226.0" style="-fx-background-color: #1a9c64;" text="Daily Data Analysis" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
             <effect>
                <DropShadow />
             </effect>
             <font>
-               <Font name="System Bold" size="12.0" />
+               <Font name="Century Gothic Bold" size="20.0" />
             </font>
-         </Label>
-         <Label layoutX="39.0" layoutY="503.0" text="&gt;75 - No Intervention Required " textFill="GREEN">
-            <effect>
-               <DropShadow />
-            </effect>
-            <font>
-               <Font name="System Bold" size="12.0" />
-            </font>
-         </Label>
+         </Button>
         </AnchorPane>
     </right>
 </BorderPane>

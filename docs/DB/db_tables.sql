@@ -21,14 +21,11 @@ ALTER TABLE `wms`.`users`
   `timestamp` DATE NULL,
   PRIMARY KEY (`id`));
   
--- Creating Foreign Keys and Indexes
-  ALTER TABLE `wms`.`reports` 
-ADD INDEX `FK_sender_id_idx` (`sender` ASC) VISIBLE;
-;
+-- Creating Foreign Keys
 ALTER TABLE `wms`.`reports` 
 ADD CONSTRAINT `FK_sender_id`
   FOREIGN KEY (`sender`)
-  REFERENCES `wms`.`users` (`id`)
+  REFERENCES `wms`.`users` (`id`);
 
 -- Creating the `products` Table
   CREATE TABLE `wms`.`products` (

@@ -4,7 +4,7 @@ import com.wms.Main;
 import com.wms.data.DBConnection;
 import com.wms.data.RequestSearch;
 import com.wms.data.User;
-import com.wms.data.WoRequestModel;
+import com.wms.data.models.WoRequestModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,10 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -43,11 +40,12 @@ public class WarehouseOperatorController implements Controller{
     @FXML private Button logoutBtn;
     @FXML private Button viewStockBtn;
     private List<RequestSearch> modelList;
+    private User userData;
 
     @Override
     public void init() {
 
-        User userData = (User)username.getScene().getWindow().getUserData();
+        userData = (User)username.getScene().getWindow().getUserData();
         try {
             this.modelList=RequestSearch.getPendingRequestsByReceiver(userData.getId());
             ObservableList<WoRequestModel> requests = FXCollections.observableList(WoRequestModel.modelList(this.modelList));
@@ -73,15 +71,19 @@ public class WarehouseOperatorController implements Controller{
 
         username.setText(username.getText()+" "+userData.getName());
         userId.setText(userId.getText()+" "+userData.getId());
+        pendingRequestsTable.setStyle("-fx-font: 12px \"Century Gothic\";");
     }
 
     public void viewStock(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("stock/view-stock.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = new Stage();
+        ViewStockController controller= fxmlLoader.getController();
         stage.initOwner(viewStockBtn.getScene().getWindow());
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root));
+        stage.setUserData(username.getScene().getWindow().getUserData());
+        controller.init();
         stage.setResizable(false);
         stage.show();
     }
@@ -91,27 +93,21 @@ public class WarehouseOperatorController implements Controller{
         parent.close();
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 520, 400);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setResizable(false);
-        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
     }
 
-    public void reportMisuse(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("report/make-report.fxml"));
-        Parent root = fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.initOwner(reportMisuseBtn.getScene().getWindow());
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
-        stage.show();
-    }
 
     public void confirmSelectedRequest(ActionEvent actionEvent) {
         int index=pendingRequestsTable.getSelectionModel().getSelectedIndex();
+        if(index==-1){
+            Alert noRequestSelected = new Alert(Alert.AlertType.ERROR,"No Request Selected",ButtonType.OK);
+            noRequestSelected.showAndWait();
+            return;
+        }
         RequestSearch rs = this.modelList.get(index);
         String SQL = "UPDATE wms.requests SET status='APPROVED' WHERE id=?";
         try(Connection conn = DBConnection.connect()){
@@ -119,6 +115,8 @@ public class WarehouseOperatorController implements Controller{
             ps.setInt(1,rs.getId());
             ps.execute();
             this.pendingRequestsTable.getItems().remove(index);
+            User.getUserById(rs.getSentBy());
+            this.modelList.remove(index);
         }catch(Exception e){
             System.out.println(e);
             e.printStackTrace();
@@ -128,6 +126,11 @@ public class WarehouseOperatorController implements Controller{
 
     public void denySelectedRequest(ActionEvent actionEvent) {
         int index=pendingRequestsTable.getSelectionModel().getSelectedIndex();
+        if(index==-1){
+            Alert noRequestSelected = new Alert(Alert.AlertType.ERROR,"No Request Selected",ButtonType.OK);
+            noRequestSelected.showAndWait();
+            return;
+        }
         RequestSearch rs = this.modelList.get(index);
         String SQL = "UPDATE wms.requests SET status='DENIED' WHERE id=?";
         try(Connection conn = DBConnection.connect()){
@@ -135,6 +138,7 @@ public class WarehouseOperatorController implements Controller{
             ps.setInt(1,rs.getId());
             ps.execute();
             this.pendingRequestsTable.getItems().remove(index);
+            this.modelList.remove(index);
         }catch(Exception e){
             System.out.println(e);
             e.printStackTrace();
@@ -145,9 +149,12 @@ public class WarehouseOperatorController implements Controller{
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("wo/request-history.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = new Stage();
+        WORequestHistoryController controller = fxmlLoader.getController();
         stage.initOwner(requestHistoryBtn.getScene().getWindow());
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root));
+        stage.setUserData(confirmSelectedRequestBtn.getScene().getWindow().getUserData());
+        controller.init();
         stage.setResizable(false);
         stage.show();
     }

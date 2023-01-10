@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.AwaitingApprovalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.AwaitingApprovalController">
     <right>
         <AnchorPane prefHeight="464.0" prefWidth="513.0" BorderPane.alignment="CENTER">
-            <Label alignment="CENTER" layoutX="109.0" layoutY="14.0" prefHeight="31.0" prefWidth="308.0" text="Users Awaiting Approval">
+         <ImageView fitHeight="464.0" fitWidth="746.0" layoutX="-231.0" opacity="0.5" pickOnBounds="true">
+            <image>
+               <Image url="@background.jpg" />
+            </image>
+         </ImageView>
+         <Rectangle fx:id="usernameRectangle" arcHeight="5.0" arcWidth="5.0" height="57.0" layoutX="106.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="321.0">
+            <effect>
+               <DropShadow />
+            </effect>
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.18400000035762787" green="0.5318275690078735" blue="0.800000011920929" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.14901961386203766" green="0.24705882370471954" blue="0.45098039507865906" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+            <Label alignment="CENTER" layoutX="109.0" layoutY="14.0" prefHeight="31.0" prefWidth="308.0" text="Users Awaiting Approval" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="24.0" />
                 </font>
@@ -18,36 +56,34 @@
                     <DropShadow />
                 </effect>
             </Label>
-            <Button fx:id="closeBtn" layoutX="139.0" layoutY="416.0" mnemonicParsing="false" onAction="#onCloseBtnClicked" prefHeight="26.0" prefWidth="235.0" style="-fx-background-color: #942a22;" text="Close" textFill="WHITE">
+            <Button fx:id="approveSelectedUserBtn" layoutX="119.0" layoutY="356.0" mnemonicParsing="false" onAction="#approveSelectedUser" prefHeight="38.0" prefWidth="286.0" style="-fx-background-color: #263F73;" text="Approve Selected User" textFill="WHITE">
                 <effect>
                     <DropShadow />
                 </effect>
                 <cursor>
                     <Cursor fx:constant="HAND" />
                 </cursor>
+            <font>
+               <Font name="Century Gothic Bold" size="20.0" />
+            </font>
             </Button>
-            <Button fx:id="approveSelectedUserBtn" layoutX="139.0" layoutY="328.0" mnemonicParsing="false" onAction="#approveSelectedUser" prefHeight="26.0" prefWidth="235.0" style="-fx-background-color: #263F73;" text="Approve Selected User" textFill="WHITE">
+            <Button fx:id="denySelectedUserBtn" layoutX="120.0" layoutY="413.0" mnemonicParsing="false" onAction="#denySelectedUser" prefHeight="38.0" prefWidth="285.0" style="-fx-background-color: #942a22;" text="Deny Selected User" textFill="WHITE">
                 <effect>
                     <DropShadow />
                 </effect>
                 <cursor>
                     <Cursor fx:constant="HAND" />
                 </cursor>
+            <font>
+               <Font name="Century Gothic Bold" size="20.0" />
+            </font>
             </Button>
-            <Button fx:id="denySelectedUserBtn" layoutX="139.0" layoutY="369.0" mnemonicParsing="false" onAction="#denySelectedUser" prefHeight="26.0" prefWidth="235.0" style="-fx-background-color: #942a22;" text="Deny Selected User" textFill="WHITE">
-                <effect>
-                    <DropShadow />
-                </effect>
-                <cursor>
-                    <Cursor fx:constant="HAND" />
-                </cursor>
-            </Button>
-            <TableView fx:id="usersAwaitingApprovalTable" layoutX="15.0" layoutY="45.0" prefHeight="274.0" prefWidth="489.0">
+            <TableView fx:id="usersAwaitingApprovalTable" layoutX="15.0" layoutY="61.0" prefHeight="274.0" prefWidth="489.0">
                 <columns>
-                    <TableColumn fx:id="idColumn" prefWidth="97.59997749328613" text="ID" />
-                    <TableColumn fx:id="usernameColumn" prefWidth="145.60002899169922" text="Username" />
-               <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
-                    <TableColumn fx:id="positionColumn" prefWidth="78.39996337890625" text="Position" />
+                    <TableColumn fx:id="idColumn" prefWidth="97.59997749328613" style="-fx-alignment: CENTER;" text="ID" />
+                    <TableColumn fx:id="usernameColumn" prefWidth="145.60002899169922" style="-fx-alignment: CENTER;" text="Username" />
+               <TableColumn fx:id="nameColumn" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Name" />
+                    <TableColumn fx:id="positionColumn" prefWidth="78.39996337890625" style="-fx-alignment: CENTER;" text="Position" />
                 </columns>
                 <effect>
                     <DropShadow />
@@ -63,6 +99,24 @@
             <effect>
                 <DropShadow />
             </effect>
+         <Circle layoutX="117.0" layoutY="168.0" radius="111.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+            <fill>
+               <RadialGradient centerX="0.5" centerY="0.45833335500774963" radius="0.5">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.1305263191461563" green="0.39157894253730774" blue="0.6526315808296204" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.054580897092819214" green="0.23781676590442657" blue="0.42105263471603394" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </RadialGradient>
+            </fill>
+         </Circle>
             <Label alignment="CENTER" layoutX="87.0" layoutY="135.0" prefHeight="32.0" prefWidth="59.0" text="WMS" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="25.0" />
@@ -99,6 +153,9 @@
                 <cursor>
                     <Cursor fx:constant="HAND" />
                 </cursor>
+            <font>
+               <Font name="Century Gothic Bold" size="20.0" />
+            </font>
             </Button>
         </AnchorPane>
     </center>

@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.ViewStockController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wms.controller.ViewStockController">
     <right>
-        <AnchorPane prefHeight="400.0" prefWidth="410.0" BorderPane.alignment="CENTER">
-            <Label alignment="CENTER" layoutX="91.0" layoutY="23.0" prefHeight="18.0" prefWidth="228.0" text="Warehouse Stock">
+        <AnchorPane prefHeight="511.0" prefWidth="492.0" BorderPane.alignment="CENTER">
+         <ImageView fitHeight="511.0" fitWidth="855.0" layoutX="-348.0" opacity="0.22" pickOnBounds="true">
+            <image>
+               <Image url="@img_1.jpg" />
+            </image>
+         </ImageView>
+         <Rectangle fx:id="usernameRectangle" arcHeight="5.0" arcWidth="5.0" height="57.0" layoutX="61.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" width="385.0">
+            <effect>
+               <DropShadow />
+            </effect>
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.18400000035762787" green="0.5318275690078735" blue="0.800000011920929" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.14901961386203766" green="0.24705882370471954" blue="0.45098039507865906" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+            <Label alignment="CENTER" layoutX="139.0" layoutY="23.0" prefHeight="18.0" prefWidth="228.0" text="Warehouse Stock" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="24.0" />
                 </font>
@@ -18,19 +54,11 @@
                     <DropShadow />
                 </effect>
             </Label>
-            <Button fx:id="closeBtn" layoutX="88.0" layoutY="359.0" mnemonicParsing="false" onAction="#onCloseBtnClicked" prefHeight="26.0" prefWidth="235.0" style="-fx-background-color: #942a22;" text="Close" textFill="WHITE">
-                <effect>
-                    <DropShadow />
-                </effect>
-                <cursor>
-                    <Cursor fx:constant="HAND" />
-                </cursor>
-            </Button>
-            <TableView layoutX="23.0" layoutY="62.0" prefHeight="274.0" prefWidth="364.0">
+            <TableView fx:id="stockTable" layoutX="35.0" layoutY="88.0" prefHeight="410.0" prefWidth="439.0">
                 <columns>
-                    <TableColumn prefWidth="97.59997749328613" text="Product ID" />
-                    <TableColumn prefWidth="145.60002899169922" text="Description" />
-                    <TableColumn prefWidth="78.39996337890625" text="Shelf Location" />
+                    <TableColumn fx:id="productIdColumn" editable="false" prefWidth="97.59997749328613" style="-fx-alignment: CENTER;" text="Product ID" />
+                    <TableColumn fx:id="descriptionColumn" editable="false" prefWidth="145.60002899169922" style="-fx-alignment: CENTER;" text="Description" />
+                    <TableColumn fx:id="shelfColumn" editable="false" prefWidth="78.39996337890625" style="-fx-alignment: CENTER;" text="Shelf Location" />
                 </columns>
                 <effect>
                     <DropShadow />
@@ -42,11 +70,29 @@
         </AnchorPane>
     </right>
     <center>
-        <AnchorPane prefHeight="400.0" prefWidth="214.0" style="-fx-background-color: #263F73;" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="511.0" prefWidth="217.0" style="-fx-background-color: #263F73;" BorderPane.alignment="CENTER">
             <effect>
                 <DropShadow />
             </effect>
-            <Label alignment="CENTER" layoutX="75.0" layoutY="135.0" prefHeight="32.0" prefWidth="59.0" text="WMS" textFill="WHITE">
+         <Circle layoutX="105.0" layoutY="202.0" radius="100.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0">
+            <fill>
+               <RadialGradient centerX="0.5" centerY="0.45833335500774963" radius="0.5">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.1305263191461563" green="0.39157894253730774" blue="0.6526315808296204" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.054580897092819214" green="0.23781676590442657" blue="0.42105263471603394" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </RadialGradient>
+            </fill>
+         </Circle>
+            <Label alignment="CENTER" layoutX="75.0" layoutY="168.0" prefHeight="32.0" prefWidth="59.0" text="WMS" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="25.0" />
                 </font>
@@ -54,7 +100,7 @@
                     <DropShadow />
                 </effect>
             </Label>
-            <Label alignment="CENTER" layoutX="4.0" layoutY="352.0" prefHeight="18.0" prefWidth="203.0" text="WMS - Warehouse Management Software" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="7.0" layoutY="488.0" prefHeight="18.0" prefWidth="203.0" text="WMS - Warehouse Management Software" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="10.0" />
                 </font>
@@ -62,7 +108,7 @@
                     <DropShadow />
                 </effect>
             </Label>
-            <Label alignment="CENTER" layoutX="12.0" layoutY="168.0" prefHeight="31.0" prefWidth="188.0" text="Stock Window" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="12.0" layoutY="201.0" prefHeight="31.0" prefWidth="188.0" text="Stock Window" textFill="WHITE">
                 <font>
                     <Font name="Century Gothic Bold" size="24.0" />
                 </font>
@@ -70,7 +116,7 @@
                     <DropShadow />
                 </effect>
             </Label>
-            <Line endX="78.0" layoutX="122.0" layoutY="168.0" startX="-109.99999237060547" stroke="WHITE" strokeWidth="2.0">
+            <Line endX="78.0" layoutX="122.0" layoutY="201.0" startX="-109.99999237060547" stroke="WHITE" strokeWidth="2.0">
                 <effect>
                     <DropShadow />
                 </effect>

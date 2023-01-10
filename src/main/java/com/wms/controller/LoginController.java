@@ -10,20 +10,24 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginController implements Controller{
     @FXML private TextField username;
     @FXML private PasswordField password;
     @FXML private Button closeBtn;
     @FXML private Button loginBtn;
-    @FXML private Label errMsg;
     @FXML private Hyperlink toRegisterPage;
+    @FXML private Label errMsg;
 
     @Override
-    public void init()  {}
+    public void init()  {
+    }
 
     public void errorMessage(String msg){
         errMsg.setText(msg);
@@ -35,7 +39,7 @@ public class LoginController implements Controller{
     public void openRegisterPage(ActionEvent ae) throws IOException {
         Stage s=(Stage)toRegisterPage.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("register.fxml"));
-        Scene registerScene = new Scene(loader.load(),520,400);
+        Scene registerScene = new Scene(loader.load());
         RegisterController rc = loader.getController();
         rc.init();
         s.setScene(registerScene);
